@@ -591,8 +591,8 @@ The patterns in this lesson build on samples from throughout the workshop:
 
 - [Build AI Apps with .NET](https://learn.microsoft.com/dotnet/ai/): The official .NET AI developer hub
 - [AI Application Patterns](https://learn.microsoft.com/azure/architecture/ai-ml/): Azure architecture guidance for AI solutions
-- [Reference Architectures for AI](https://learn.microsoft.com/azure/architecture/ai-ml/architecture/): Production-ready patterns and blueprints
-- [End-to-end AI solutions](https://learn.microsoft.com/dotnet/ai/tutorials/tutorials-overview): Complete tutorials for real-world scenarios
+- [Reference Architectures for AI](https://learn.microsoft.com/azure/architecture/ai-ml/): Production-ready patterns and blueprints
+- [End-to-end AI solutions](https://learn.microsoft.com/dotnet/ai/): Complete tutorials for real-world scenarios
 
 ---
 

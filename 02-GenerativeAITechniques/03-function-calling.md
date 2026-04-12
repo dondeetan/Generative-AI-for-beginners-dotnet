@@ -433,7 +433,7 @@ Console.WriteLine(await client.GetResponseAsync(
 
 - [IChatClient Tool Calling](https://learn.microsoft.com/dotnet/ai/ichatclient#tool-calling): Complete guide to function calling with IChatClient
 - [Access Data in AI Functions](https://learn.microsoft.com/dotnet/ai/how-to/access-data-in-functions): Best practices for database and API access in tools
-- [Function calling concepts](https://learn.microsoft.com/dotnet/ai/conceptual/function-calling): How AI models decide when to call functions
+- [Function calling concepts](https://learn.microsoft.com/dotnet/ai/quickstarts/use-function-calling): How AI models decide when to call functions
 
 ---
 

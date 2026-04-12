@@ -391,7 +391,7 @@ Can you answer these questions?
 
 - [IChatClient Interface Guide](https://learn.microsoft.com/dotnet/ai/ichatclient): Complete reference for the unified chat abstraction
 - [Build an AI Chat App with .NET](https://learn.microsoft.com/dotnet/ai/quickstarts/build-chat-app): Step-by-step quickstart tutorial
-- [Chat message roles](https://learn.microsoft.com/dotnet/ai/conceptual/chat-message-roles): Understanding System, User, and Assistant roles
+- [Chat message roles](https://learn.microsoft.com/dotnet/ai/conceptual/prompt-engineering-dotnet): Understanding System, User, and Assistant roles
 
 ---
 

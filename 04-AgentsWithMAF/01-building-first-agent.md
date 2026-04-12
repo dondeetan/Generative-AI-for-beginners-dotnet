@@ -287,7 +287,7 @@ Not every AI application needs agents. Here's a decision guide:
 - [Microsoft Agent Framework Overview](https://learn.microsoft.com/agent-framework/overview/agent-framework-overview): Architecture and concepts of the Agent Framework
 - [Agent Framework Quick-Start Guide](https://learn.microsoft.com/agent-framework/tutorials/quick-start): Build your first agent in minutes
 - [What are agents? (.NET)](https://learn.microsoft.com/dotnet/ai/conceptual/agents): Conceptual guide to AI agents in .NET
-- [AIAgent class reference](https://learn.microsoft.com/agent-framework/user-guide/agents/agent-overview): API documentation for the core agent abstraction
+- [AIAgent class reference](https://learn.microsoft.com/agent-framework/agents/): API documentation for the core agent abstraction
 
 ---
 

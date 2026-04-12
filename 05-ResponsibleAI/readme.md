@@ -213,7 +213,7 @@ Not all actions carry the same risk. Reading data is generally safe. Sending an 
 
 Design your approval workflows around this risk assessment. Low-risk actions can proceed automatically. Medium and high-risk actions should require explicit human approval.
 
-Learn more: [Planning Responsible AI Agents](https://learn.microsoft.com/azure/ai-services/agents/concepts/responsible-ai)
+Learn more: [Planning Responsible AI Agents](https://learn.microsoft.com/azure/cloud-adoption-framework/ai-agents/responsible-ai-across-organization)
 
 ---
 

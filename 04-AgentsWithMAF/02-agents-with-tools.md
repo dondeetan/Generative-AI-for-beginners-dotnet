@@ -380,7 +380,7 @@ static string GetOrderStatus(string orderId) { ... }
 ## Additional Resources
 
 - [Agent Tools Documentation](https://learn.microsoft.com/agent-framework/user-guide/agents/agent-tools): Complete guide to creating and managing agent tools
-- [Function Calling Concepts](https://learn.microsoft.com/dotnet/ai/conceptual/function-calling): How AI models decide when and how to call functions
+- [Function Calling Concepts](https://learn.microsoft.com/dotnet/ai/quickstarts/use-function-calling): How AI models decide when and how to call functions
 - [AIFunctionFactory reference](https://learn.microsoft.com/dotnet/api/microsoft.extensions.ai.aifunctionfactory): API for wrapping .NET methods as AI tools
 
 ---

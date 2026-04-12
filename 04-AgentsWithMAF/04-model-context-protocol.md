@@ -4,7 +4,7 @@ In this lesson, you'll learn how to extend your agents with standardized tool se
 
 ---
 
-[![Model Context Protocol](./images/LIM_GAN_08_thumb_w480.png)](https://aka.ms/genainet/videos/lesson4-mcp)
+[![Model Context Protocol](./images/LIM_GAN_08_thumb_w480.png)](https://aka.ms/genainnet/videos/lesson4-mcp)
 
 _Click the image to watch the video_
 
