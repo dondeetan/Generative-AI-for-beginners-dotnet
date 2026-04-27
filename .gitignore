@@ -411,3 +411,6 @@ FodyWeavers.xsd
 # IDE / build cache
 *.lscache
 .copilot/skills/
+
+# Local sample configuration
+appsettings.local.json

@@ -1,0 +1,7 @@
+{
+  "OpenAI": {
+    "Endpoint": "https://api.openai.com/v1",
+    "ApiKey": "<insert openai ApiKey>",
+    "Model": "gpt-5-mini"
+  }
+}

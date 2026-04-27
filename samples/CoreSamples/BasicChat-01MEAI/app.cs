@@ -1,24 +1,50 @@
-#:package Azure.AI.OpenAI@2.8.0-beta.1
-#:package Azure.Identity@1.18.0
 #:package Microsoft.Extensions.AI@10.3.0
 #:package Microsoft.Extensions.AI.OpenAI@10.3.0
-#:package Microsoft.Extensions.Configuration.UserSecrets@10.0.3
-#:property UserSecretsId=genai-beginners-dotnet
+#:package Microsoft.Extensions.Configuration.EnvironmentVariables@10.0.3
+#:package Microsoft.Extensions.Configuration.Json@10.0.3
+#:package OpenAI@2.8.0
 
-﻿using Azure.AI.OpenAI;
-using Azure.Identity;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Configuration;
+using OpenAI;
+using System.ClientModel;
 using System.Text;
 
-var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
-var endpoint = config["AzureOpenAI:Endpoint"]
-    ?? throw new InvalidOperationException("Set AzureOpenAI:Endpoint in User Secrets. See: https://github.com/microsoft/Generative-AI-for-beginners-dotnet/blob/main/01-IntroductionToGenerativeAI/setup-azure-openai.md");
-var deploymentName = config["AzureOpenAI:Deployment"] ?? "gpt-5-mini";
+var config = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json", optional: true)
+    .AddJsonFile("appsettings.local.json", optional: true)
+    .AddEnvironmentVariables()
+    .Build();
 
-IChatClient client = new AzureOpenAIClient(new Uri(endpoint), new AzureCliCredential())
-        .GetChatClient(deploymentName)
-        .AsIChatClient();
+var endpoint = config["OpenAI:Endpoint"];
+if (string.IsNullOrWhiteSpace(endpoint))
+{
+    throw new InvalidOperationException("Set OpenAI:Endpoint in appsettings.local.json. See appsettings.local.json.example.");
+}
+
+if (endpoint.Contains("/responses", StringComparison.OrdinalIgnoreCase) ||
+    endpoint.Contains("/chat/completions", StringComparison.OrdinalIgnoreCase))
+{
+    throw new InvalidOperationException("OpenAI:Endpoint must be the base OpenAI-compatible endpoint, such as https://api.openai.com/v1. Do not include /responses or /chat/completions.");
+}
+
+var apiKey = config["OpenAI:ApiKey"];
+if (string.IsNullOrWhiteSpace(apiKey))
+{
+    throw new InvalidOperationException("Set OpenAI:ApiKey in appsettings.local.json. See appsettings.local.json.example.");
+}
+
+var model = config["OpenAI:Model"] ?? "gpt-5-mini";
+
+OpenAIClientOptions options = new()
+{
+    Endpoint = new Uri(endpoint)    
+};
+
+IChatClient client = new OpenAIClient(new ApiKeyCredential(apiKey),options)
+    .GetChatClient(model)
+    .AsIChatClient();
 
 // here we're building the prompt
 StringBuilder prompt = new StringBuilder();
