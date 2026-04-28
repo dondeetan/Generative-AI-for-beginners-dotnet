@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCP-02-HuggingFace-Ollama",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGeneration-AzureSora2-01", "VideoGeneration-AzureSora2-01\VideoGeneration-AzureSora2-01.csproj", "{8E3D5B50-B346-43C5-B71C-43C4427B39C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAIChatClientShared", "OpenAIChatClientShared\OpenAIChatClientShared.csproj", "{6CD9A854-12C4-4DA0-B2FB-4E5C0F5B8B09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -327,6 +329,18 @@ Global
 		{8E3D5B50-B346-43C5-B71C-43C4427B39C9}.Release|x64.Build.0 = Release|Any CPU
 		{8E3D5B50-B346-43C5-B71C-43C4427B39C9}.Release|x86.ActiveCfg = Release|Any CPU
 		{8E3D5B50-B346-43C5-B71C-43C4427B39C9}.Release|x86.Build.0 = Release|Any CPU
+		{6CD9A854-12C4-4DA0-B2FB-4E5C0F5B8B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CD9A854-12C4-4DA0-B2FB-4E5C0F5B8B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CD9A854-12C4-4DA0-B2FB-4E5C0F5B8B09}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6CD9A854-12C4-4DA0-B2FB-4E5C0F5B8B09}.Debug|x64.Build.0 = Debug|Any CPU
+		{6CD9A854-12C4-4DA0-B2FB-4E5C0F5B8B09}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6CD9A854-12C4-4DA0-B2FB-4E5C0F5B8B09}.Debug|x86.Build.0 = Debug|Any CPU
+		{6CD9A854-12C4-4DA0-B2FB-4E5C0F5B8B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CD9A854-12C4-4DA0-B2FB-4E5C0F5B8B09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CD9A854-12C4-4DA0-B2FB-4E5C0F5B8B09}.Release|x64.ActiveCfg = Release|Any CPU
+		{6CD9A854-12C4-4DA0-B2FB-4E5C0F5B8B09}.Release|x64.Build.0 = Release|Any CPU
+		{6CD9A854-12C4-4DA0-B2FB-4E5C0F5B8B09}.Release|x86.ActiveCfg = Release|Any CPU
+		{6CD9A854-12C4-4DA0-B2FB-4E5C0F5B8B09}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
