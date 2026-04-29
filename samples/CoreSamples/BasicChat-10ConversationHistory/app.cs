@@ -27,7 +27,7 @@ bool loopCheck = true;
 
 while (loopCheck)
 {
-    Console.WriteLine("conversation/press any key to Exit app");
+    Console.WriteLine("Type 'conversation' to start a new conversation or press any key to Exit app");
     var askCommand = Console.ReadLine();
 
     if (askCommand == "conversation")
