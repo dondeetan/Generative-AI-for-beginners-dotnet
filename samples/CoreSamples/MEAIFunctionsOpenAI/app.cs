@@ -17,30 +17,28 @@ var config = new ConfigurationBuilder()
     .AddEnvironmentVariables()
     .Build();
 
-ChatOptions options = new ChatOptions
-{
-    Tools = [
-        AIFunctionFactory.Create(GetTheWeather)
-    ]
-};
-
 IChatClient client = OpenAIChatClientFactory.Create(config)
     .AsBuilder()
     .UseFunctionInvocation()
     .Build();
 
-var question = "Do I need an umbrella today?";
-Console.WriteLine($"question: {question}");
-var response = await client.GetResponseAsync(question, options);
-Console.WriteLine($"response: {response}");
-
-
 [Description("Get the weather")]
-static string GetTheWeather()
+static string GetWeather()
 {
     var temperature = Random.Shared.Next(5, 20);
-    var conditions = Random.Shared.Next(0, 1) == 0 ? "sunny" : "rainy";
-    var weatherInfo = $"The weather is {temperature} degrees C and {conditions}.";
-    Console.WriteLine($"\tFunction Call - Returning weather info: {weatherInfo}");
-    return weatherInfo;
+    var condition = Random.Shared.Next(0, 1) == 0 ? "sunny" : "rainy";
+    return $"The weather is {temperature} degree C and {condition}";
 }
+
+var chatOptions = new ChatOptions
+{
+    Tools = [AIFunctionFactory.Create(GetWeather)]
+};
+
+var funcCallingResponseOne = await client.GetResponseAsync("What is today's date?", chatOptions);
+var funcCallingResponseTwo = await client.GetResponseAsync("Why don't you tell me about today's temperature?", chatOptions);
+var funcCallingResponseThree = await client.GetResponseAsync("Should I bring an umbrella with me today?", chatOptions);
+
+Console.WriteLine($"Response 1: {funcCallingResponseOne}");
+Console.WriteLine($"Response 2: {funcCallingResponseTwo}");
+Console.WriteLine($"Response 3: {funcCallingResponseThree}");
