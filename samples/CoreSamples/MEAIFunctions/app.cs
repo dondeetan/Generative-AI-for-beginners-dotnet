@@ -1,20 +1,21 @@
-#:package Azure.AI.OpenAI@2.8.0-beta.1
-#:package Azure.Identity@1.18.0
 #:package Microsoft.Extensions.AI@10.3.0
 #:package Microsoft.Extensions.AI.OpenAI@10.3.0
-#:package Microsoft.Extensions.Configuration.UserSecrets@10.0.3
+#:package Microsoft.Extensions.Configuration.EnvironmentVariables@10.0.3
+#:package Microsoft.Extensions.Configuration.Json@10.0.3
+#:project ../OpenAIChatClientShared/OpenAIChatClientShared.csproj
 #:property UserSecretsId=genai-beginners-dotnet
 
-﻿using Azure.AI.OpenAI;
-using Azure.Identity;
+using GenerativeAIForBeginners.OpenAI;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Configuration;
 using System.ComponentModel;
 
-var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
-var endpoint = config["AzureOpenAI:Endpoint"]
-    ?? throw new InvalidOperationException("Set AzureOpenAI:Endpoint in User Secrets. See: https://github.com/microsoft/Generative-AI-for-beginners-dotnet/blob/main/01-IntroductionToGenerativeAI/setup-azure-openai.md");
-var deploymentName = config["AzureOpenAI:Deployment"] ?? "gpt-5-mini";
+var config = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json", optional: true)
+    .AddJsonFile("appsettings.local.json", optional: true)
+    .AddEnvironmentVariables()
+    .Build();
 
 ChatOptions options = new ChatOptions
 {
@@ -23,10 +24,7 @@ ChatOptions options = new ChatOptions
     ]
 };
 
-
-IChatClient client = new AzureOpenAIClient(new Uri(endpoint), new AzureCliCredential())
-    .GetChatClient(deploymentName)
-    .AsIChatClient()
+IChatClient client = OpenAIChatClientFactory.Create(config)
     .AsBuilder()
     .UseFunctionInvocation()
     .Build();
